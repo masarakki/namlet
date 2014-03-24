@@ -36,4 +36,10 @@ describe Namlet do
     it { expect(user_a).to eq user_b }
   end
 
+  describe :expect do
+    it "expect target actual instance" do
+      expect(user_a).to receive(:size)
+      user_a.instance_variable_get(:@actual).size
+    end
+  end
 end
