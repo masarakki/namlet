@@ -1,6 +1,8 @@
 # Namlet
 
-Namlet is named-let feature for rspec.
+Namlet means "named-let" that replaces output of expectation to variable name.
+
+## Output
 
 let:
 
@@ -15,8 +17,8 @@ it { expect(user_a).to be_friend_of user_b }
 namlet:
 
 ```ruby
-namlet(:user_a) { User.new }
-namlet(:user_b) { User.new }
+let(:user_a) { User.new }
+let(:user_b) { User.new }
 
 it { expect(user_a).to be_friend_of user_b }
 => should be friend of user_b
@@ -35,10 +37,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install namlet
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Contributing
 
