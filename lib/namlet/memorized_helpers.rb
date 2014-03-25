@@ -8,7 +8,7 @@ module Namlet
     module ClassMethods
       def let(name, &block)
         super("___wrapped_#{name}".to_sym, &block)
-        super(name) { Namlet::Wrapper.new(name, send("___wrapped_#{name}".to_sym)) }
+        super(name.to_sym) { Namlet::Wrapper.new(name.to_sym, send("___wrapped_#{name}".to_sym)) }
       end
     end
   end
